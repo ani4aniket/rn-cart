@@ -1,0 +1,10 @@
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const EMPTY_CART = 'EMPTY_CART';
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
+export const ADD_TO_WISHLIST = 'ADD_TO_WISHLIST';
+export const EMPTY_WISHLIST = 'EMPTY_WISHLIST';
+export const REMOVE_FROM_WISHLIST = 'REMOVE_FROM_WISHLIST';
+export const ADD_ORDER = 'ADD_ORDER ';
+export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
+export const SAVE_LOGIN = 'SAVE_LOGIN';
+export const REMOVE_LOGIN = 'REMOVE_LOGIN';
