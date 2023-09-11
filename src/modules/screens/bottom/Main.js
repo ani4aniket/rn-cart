@@ -14,6 +14,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import CarouselCards from '../../../components/CarouselCards';
 import Header from '../../../components/Header';
 import {getAllProduct} from '../../../redux/action/ProductActions';
+import {addToWishlist} from '../../../redux/action/WishlistActions';
 
 const Main = () => {
   // const [products, setProducts] = useState([]);
@@ -55,10 +56,17 @@ const Main = () => {
                   }}>
                   <Image source={{uri: item.image}} style={styles.image} />
                 </TouchableOpacity>
-                <Image
-                  source={require('../../../assets/Images/Favourite.png')}
-                  style={styles.wishlist}
-                />
+
+                <TouchableOpacity
+                  onPress={() => {
+                    dispatch(addToWishlist(item));
+                  }}>
+                  <Image
+                    source={require('../../../assets/Images/Favourite.png')}
+                    style={styles.wishlist}
+                  />
+                </TouchableOpacity>
+
                 <Text style={styles.name}>{item.name}</Text>
                 <Text style={styles.body}>{item.description}</Text>
                 <Text style={styles.body}>${item.price}</Text>

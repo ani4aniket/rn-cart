@@ -6,25 +6,25 @@ import {
 const initialState = {
   wishlist: [],
 };
-console.log('Wishlisttttstates>>>>>>>', initialState);
 export const WishlistReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_WISHLIST:
-      console.log('wishlistActionPayload========== ', action.payload);
       return {
         ...state,
         wishlist: [...state.wishlist, action.payload],
       };
+
+    case REMOVE_FROM_WISHLIST:
+      const deletedArrayWishlist = state.wishlist.filter(item => {
+        return item.id !== action.payload;
+      });
+      return {...state, wishlist: deletedArrayWishlist};
+
     case EMPTY_WISHLIST:
       return {
         ...state,
         wishlist: action.payload,
       };
-    case REMOVE_FROM_WISHLIST:
-      const deletedArrayWishlist = state.filter(index => {
-        return index !== action.payload;
-      });
-      return deletedArrayWishlist;
 
     default:
       return state;
